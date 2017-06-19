@@ -22,9 +22,14 @@
 
 # How to use it.
 
-# Results
+```
+make test
+```
+
+# Subtools
 
 ## dns-external_bench.sh
+
 The tool dns-external_bench.sh is useful to check the level of Quality-of-Service of DNS infrastructure.
 
 The script harvest the data and plot a graph with the distribution of time to response.
@@ -42,6 +47,6 @@ of :
 * ${C} is the number of total connection keep alived simultaneously.
 
 
-To view the data the system will generates, the script plot/plot_latency.plt and plot/req_sec.plt : 
+To view the data the system will generates, use the script plot/plot_latency.plt and plot/req_sec.plt .
 
 
