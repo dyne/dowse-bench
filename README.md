@@ -1,19 +1,25 @@
 # File composition
 
 .
-├── compare-dns-plot.plt
+├── compare-dns-plot.plt # a script to plot the comparison between internal and external DNS performance.
 ├── dns-external_bench.sh
 ├── dns-internal_bench.sh
-├── dns-record.txt
 ├── Makefile
-├── plot.plt
+├── plot_distribution.plt
 ├── README.md
 ├── result
-....
-├── webui-bench.sh
+.... # contains the file recorded during benchmark execution
+├── conf
+├── parameter.conf # contains the parameter useful to change the testing target
+├── input
+├── dns-record.txt  # contains a recording session take subscribing from dns-query-channel (the Dowse channel)
+├── plot # contains automatically generated file to plot data
+├── webui-bench.sh # a stress script 
 └── wrk
 ...
 
+
+# How to use it.
 
 # Results
 
@@ -26,15 +32,15 @@ The script, ./compare-dns-plot.plt is useful to compare the result of the intran
 
 ## webui_bench.sh
 
-The webui_bench.sh measure the response of the dowse.it page, with various worload samples and client configurations.
-The result of this test are stored in file with name like:
+The webui_bench.sh measure the response of the dowse.it page, with various workload samples and client configurations.
+The result of this test are stored in file named likes:
  result/result-${T}-${C}-${D}.data
 
-where:
+of :
 * ${T} is the number of client's thread running simultaneously.
 * ${C} is the number of total connection keep alived simultaneously.
 
 
-To view the data we provided the script : 
+To view the data the system will generates, the script plot/plot_latency.plt and plot/req_sec.plt : 
 
 

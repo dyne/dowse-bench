@@ -2,6 +2,7 @@
 
 source conf/parameter.conf
 
+echo "Starting test of ${URL_TO_BENCHMARK} ..."
 
 rm -f result/latency*.data
 rm -f result/req_sec*.data
@@ -70,9 +71,11 @@ for T in ${LISTT[@]}; do
 done
 
 function ending {
-    echo "pause -1" >> ${1}    
+    echo 'pause -1 "Press any key to continue"' >> ${1}    
     chmod +x ${1}
     echo -e "To plot [$2] you can now execute generated file : [$1] "
+
+    
 }
 
 ending ${plot_latency} "Latency"

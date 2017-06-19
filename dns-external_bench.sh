@@ -1,3 +1,4 @@
+#!/bin/bash
 source conf/parameter.conf
 
 echo "Work in progress..."
@@ -7,4 +8,6 @@ awk -F, '/DNS/ {print $5}' ${DNS_RECORD_FILE} |while read query ; do
 				done    | tee result/res.data
 cp result/res.data result/dns-external_result.data
 ./plot_distribution.plt
+
+echo "Execute [./plot_distribution.plt] to view this result"
 

@@ -2,11 +2,19 @@
 all:	compile test
 
 
-compile: wrk dnsblast
+compile: wrk 
 
+test: dns_internal dns_external  webui
+	@echo "DONE"
 
-test:
-	@echo "TODO"
+webui:
+	@./webui_bench.sh
+
+dns_internal:
+	@./dns-internal_bench.sh
+
+dns_external:
+	@./dns-external_bench.sh
 
 clean:
 	rm -f *~
@@ -14,7 +22,5 @@ clean:
 wrk:
 	make -C wrk 
 
-dnsblast:
-	make -C dnsblast
+.PHONY: wrk 
 
-.PHONY: wrk dnsblast
